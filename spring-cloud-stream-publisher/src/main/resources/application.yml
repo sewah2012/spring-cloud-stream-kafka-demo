@@ -1,0 +1,32 @@
+server:
+  port: 8089
+
+#spring:
+#  cloud:
+#    stream:
+#      bindings:
+#        pushBook-out-0:
+#          destination: spring-cloud-stream
+#      kafka:
+#        binder:
+#          brokers: localhost
+#          defaultBrokerPort: 29092
+
+
+
+spring:
+  application:
+    name: Book-producer
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:29092
+#          zkNodes: localhost:2181,localhost:2182,localhost:2183
+
+      bindings:
+        new-book-out-0:
+          destination: spring-cloud-stream
+
+
+
